@@ -8,7 +8,8 @@ import lombok.Setter;
 public class UserResource {
 
   private String id;
-  private String fullName;
+  private String firstName;
+  private String lastName;
   private String email;
   private String pan;
 

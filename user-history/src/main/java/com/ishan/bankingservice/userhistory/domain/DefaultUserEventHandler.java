@@ -17,7 +17,8 @@ public class DefaultUserEventHandler implements UserEventHandler {
     if ("UserCreated".equals(eventType)) {
       UserCreated userCreated = mapper.readValue(event, UserCreated.class);
       user.setUserId(userCreated.getAggregateId().getId());
-      user.setFullName(userCreated.getFullName());
+      user.setFirstName(userCreated.getFirstName());
+      user.setLastName(userCreated.getLastName());
       user.setEmail(userCreated.getEmail());
       user.setPan(userCreated.getPan());
     } else if ("UserNameUpdated".equals(eventType)) {
@@ -25,10 +26,11 @@ public class DefaultUserEventHandler implements UserEventHandler {
 
       UserHistory history = new UserHistory();
       history.setKey("Full Name");
-      history.setFrom(user.getFullName());
-      history.setTo(userNameUpdated.getNewFullName());
+      history.setFrom(user.getFirstName() + " " + user.getLastName());
+      history.setTo(userNameUpdated.getNewFirstName() + " " + userNameUpdated.getNewLastName());
 
-      user.setFullName(userNameUpdated.getNewFullName());
+      user.setFirstName(userNameUpdated.getNewFirstName());
+      user.setLastName(userNameUpdated.getNewLastName());
       user.addHistory(history);
     } else if ("UserEmailUpdated".equals(eventType)) {
       UserEmailUpdated userEmailUpdated = mapper.readValue(event, UserEmailUpdated.class);

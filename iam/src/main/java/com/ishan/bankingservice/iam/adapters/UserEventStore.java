@@ -4,11 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ishan.bankingservice.common.AggregateId;
 import com.ishan.bankingservice.common.EventStore;
 import com.ishan.bankingservice.iam.adapters.Fact.Status;
-import com.ishan.bankingservice.iam.domain.UserCreated;
-import com.ishan.bankingservice.iam.domain.UserEmailUpdated;
 import com.ishan.bankingservice.iam.domain.UserEvent;
-import com.ishan.bankingservice.iam.domain.UserNameUpdated;
-import com.ishan.bankingservice.iam.domain.UserPanUpdated;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
@@ -45,22 +41,12 @@ class UserEventStore implements EventStore<UserEvent> {
   }
 
   private UserEvent from(Fact userFact) {
-    UserEvent userEvent = null;
-    try {
-      String type = userFact.getFactType();
-      if ("UserCreated".equals(type)){
-        userEvent = mapper.readValue(userFact.getFact(), UserCreated.class);
-      } else if ("UserNameUpdated".equals(type)) {
-        userEvent = mapper.readValue(userFact.getFact(), UserNameUpdated.class);
-      } else if ("UserEmailUpdated".equals(type)) {
-        userEvent = mapper.readValue(userFact.getFact(), UserEmailUpdated.class);
-      } else if ("UserPanUpdated".equals(type)) {
-        userEvent = mapper.readValue(userFact.getFact(), UserPanUpdated.class);
-      }
-    } catch (Exception e) {
-     log.error("Exception: Cannot parse fact -> event", e);
-    }
-    return userEvent;
+    UserEventParser defaultParser = new DefaultUserEventParser();
+
+    UserEventParser v1Parser = new UserEventParserV1();
+    v1Parser.setNext(defaultParser);
+
+    return v1Parser.parse(userFact, mapper);
   }
 
   private Fact to(UserEvent userEvent) {

@@ -10,7 +10,8 @@ The User Aggregate
 public class User {
 
   private UserId userId;
-  private String fullName;
+  private String firstName;
+  private String lastName;
   private String email;
   private String pan;
   private int revision;
@@ -18,7 +19,9 @@ public class User {
 
   public UserId getUserId() { return this.userId; }
 
-  public String getFullName() { return this.fullName; }
+  public String getFirstName() { return this.firstName; }
+
+  public String getLastName() { return this.lastName; }
 
   public String getEmail() {
     return this.email;
@@ -28,23 +31,25 @@ public class User {
 
   public List<UserEvent> getChanges() { return this.changes; }
 
-  public UserId create(String fullName, String email, String pan) {
+  public UserId create(String firstName, String lastName, String email, String pan) {
     this.userId = UserId.generate();
-    this.fullName = Objects.requireNonNull(fullName);
+    this.firstName = Objects.requireNonNull(firstName);
+    this.lastName = Objects.requireNonNull(lastName);
     this.email = email;
     this.pan = Objects.requireNonNull(pan);
     this.revision = 1;
     this.changes.add(
-        new UserCreated(this.userId, this.revision, this.fullName, this.email, this.pan)
+        new UserCreated(this.userId, this.revision, this.firstName, this.lastName, this.email, this.pan)
     );
     return this.userId;
   }
 
-  public void updateFullName(String newFullName) {
-    this.fullName = newFullName;
+  public void updateFullName(String newFirstName, String newLastName) {
+    this.firstName = newFirstName;
+    this.lastName = newLastName;
     ++this.revision;
     this.changes.add(
-        new UserNameUpdated(this.userId, this.revision, this.fullName)
+        new UserNameUpdated(this.userId, this.revision, this.firstName, this.lastName)
     );
   }
 
@@ -66,14 +71,16 @@ public class User {
 
   public void apply(UserCreated userCreated) {
     this.userId = userCreated.getAggregateId();
-    this.fullName = userCreated.getFullName();
+    this.firstName = userCreated.getFirstName();
+    this.lastName = userCreated.getLastName();
     this.email = userCreated.getEmail();
     this.pan = userCreated.getPan();
     this.revision = userCreated.getRevision();
   }
 
   public void apply(UserNameUpdated userNameUpdated) {
-    this.fullName = userNameUpdated.getNewFullName();
+    this.firstName = userNameUpdated.getNewFirstName();
+    this.lastName = userNameUpdated.getNewLastName();
     this.revision = userNameUpdated.getRevision();
   }
 
@@ -85,6 +92,28 @@ public class User {
   public void apply(UserPanUpdated userPanUpdated) {
     this.pan = userPanUpdated.getNewPan();
     this.revision = userPanUpdated.getRevision();
+  }
+
+  public void apply(UserCreatedV1 userCreated) {
+    this.userId = userCreated.getAggregateId();
+
+    String fullName = userCreated.getFullName();
+    String[] name = fullName.split(" ");
+    this.firstName = name[0];
+    this.lastName = name.length > 1 ? name[1] : null;
+
+    this.email = userCreated.getEmail();
+    this.pan = userCreated.getPan();
+    this.revision = userCreated.getRevision();
+  }
+
+  public void apply(UserNameUpdatedV1 userNameUpdated) {
+    String newFullName = userNameUpdated.getNewFullName();
+    String[] name = newFullName.split(" ");
+    this.firstName = name[0];
+    this.lastName = name.length > 1 ? name[1] : null;
+
+    this.revision = userNameUpdated.getRevision();
   }
 
 }
