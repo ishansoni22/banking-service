@@ -1,37 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2022-08-22T07:14:54.220Z" agent="5.0 (Macintosh)" etag="ePtl5GvMW5cRwF5cT55s" version="20.2.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-10-03T12:41:51.425Z" agent="5.0 (Macintosh)" etag="LKaVlZBiouRASGBNdTV4" version="20.4.0" type="github">
   <diagram id="Zm1H1H7miBlcfrCc9JuF" name="Page-1">
-    <mxGraphModel dx="2196" dy="1740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2262" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="cF_xTZ270S69VVXFKJcA-1" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="450" y="480" as="sourcePoint" />
-            <mxPoint x="450" as="targetPoint" />
+            <mxPoint x="300" y="490" as="sourcePoint" />
+            <mxPoint x="300" y="10" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cF_xTZ270S69VVXFKJcA-3" value="&lt;div align=&quot;center&quot;&gt;&amp;lt;&amp;lt;Aggregate&amp;gt;&amp;gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;Card&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- User applies for a credit card&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- Spend using a credit card (within credit-limit)&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- Make payment towards a credit card (using self account balance)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" parent="1" vertex="1">
-          <mxGeometry x="-330" y="190" width="240" height="240" as="geometry" />
+        <mxCell id="cF_xTZ270S69VVXFKJcA-3" value="&lt;div align=&quot;center&quot;&gt;&amp;lt;&amp;lt;Aggregate&amp;gt;&amp;gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;&lt;b&gt;Card&lt;/b&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- User applies for a credit card&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- Spend using a credit card (within credit-limit)&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- Make payment towards a credit card (using self account balance)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-330" y="230" width="200" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="cF_xTZ270S69VVXFKJcA-4" value="&lt;div&gt;&amp;lt;&amp;lt;Aggregate&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;Account&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Create a new bank account for a user&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Deposit cash (Deposit Machines?)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Withdraw cash (ATM?)&lt;/div&gt;&lt;div&gt;- Transfer Money (to another account)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="-70" y="190" width="240" height="240" as="geometry" />
+        <mxCell id="cF_xTZ270S69VVXFKJcA-4" value="&lt;div&gt;&amp;lt;&amp;lt;Aggregate&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Account&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Create a new bank account for a user&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Deposit cash (Deposit Machines?)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Withdraw cash (ATM?)&lt;/div&gt;&lt;div&gt;- Transfer Money (to another account)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="-120" y="230" width="200" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="cF_xTZ270S69VVXFKJcA-5" value="&lt;div&gt;&amp;lt;&amp;lt;Aggregate&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;Deposit&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Create a fixed deposit&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Premature closure&lt;/div&gt;&lt;div&gt;- Fixed deposit maturity (create a simple flow)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="190" y="190" width="240" height="240" as="geometry" />
+        <mxCell id="cF_xTZ270S69VVXFKJcA-5" value="&lt;div&gt;&amp;lt;&amp;lt;Aggregate&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Deposit&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Create a fixed deposit&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Premature closure&lt;/div&gt;&lt;div&gt;- Fixed deposit maturity (create a simple flow)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="90" y="230" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-6" value="&lt;u&gt;COMMAND SIDE&lt;/u&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="-15" y="20" width="130" height="30" as="geometry" />
+          <mxGeometry x="-200" y="100" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-7" value="&lt;u&gt;QUERY SIDE&lt;/u&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="660" y="20" width="130" height="30" as="geometry" />
+          <mxGeometry x="425" y="100" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-8" value="&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;- User Details&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Name, Email, PAN&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;- All Accounts&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Balance&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Last 10 Transactions&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;- All Cards&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Current Outstanding&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Credit Limit&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;- All Deposits&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Current Value&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Maturity Date&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="470" y="190" width="240" height="240" as="geometry" />
+          <mxGeometry x="310" y="230" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-9" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-220" y="100" as="sourcePoint" />
-            <mxPoint x="-220" y="180" as="targetPoint" />
+            <mxPoint x="-230.5" y="150" as="sourcePoint" />
+            <mxPoint x="-230.5" y="230" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-14" value="/cards" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="cF_xTZ270S69VVXFKJcA-9" vertex="1" connectable="0">
@@ -41,8 +41,8 @@
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-10" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="40" y="100" as="sourcePoint" />
-            <mxPoint x="40" y="180" as="targetPoint" />
+            <mxPoint x="-30" y="150" as="sourcePoint" />
+            <mxPoint x="-30" y="230" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-15" value="/accounts" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="cF_xTZ270S69VVXFKJcA-10" vertex="1" connectable="0">
@@ -52,8 +52,8 @@
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-11" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="320" y="100" as="sourcePoint" />
-            <mxPoint x="320" y="180" as="targetPoint" />
+            <mxPoint x="189.5" y="150" as="sourcePoint" />
+            <mxPoint x="189.5" y="230" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-16" value="/deposits" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="cF_xTZ270S69VVXFKJcA-11" vertex="1" connectable="0">
@@ -61,31 +61,31 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cF_xTZ270S69VVXFKJcA-12" value="EVENT STORE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-590" y="490" width="1560" height="60" as="geometry" />
+        <mxCell id="cF_xTZ270S69VVXFKJcA-12" value="&lt;b&gt;EVENT STORE&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-540" y="490" width="1260" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-17" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-220" y="490" as="sourcePoint" />
-            <mxPoint x="-220" y="433" as="targetPoint" />
+            <mxPoint x="-230.5" y="490" as="sourcePoint" />
+            <mxPoint x="-230.5" y="433" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-18" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="40" y="490" as="sourcePoint" />
-            <mxPoint x="40" y="430" as="targetPoint" />
+            <mxPoint x="-30" y="490" as="sourcePoint" />
+            <mxPoint x="-30" y="430" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-19" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="300" y="487" as="sourcePoint" />
-            <mxPoint x="300" y="430" as="targetPoint" />
+            <mxPoint x="189.5" y="487" as="sourcePoint" />
+            <mxPoint x="189.5" y="430" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-21" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="600" y="100" as="sourcePoint" />
-            <mxPoint x="600" y="180" as="targetPoint" />
+            <mxPoint x="409.5" y="150" as="sourcePoint" />
+            <mxPoint x="409.5" y="230" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-22" value="/one-view" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="cF_xTZ270S69VVXFKJcA-21" vertex="1" connectable="0">
@@ -95,23 +95,26 @@
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="cF_xTZ270S69VVXFKJcA-8" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="590" y="490" as="sourcePoint" />
+            <mxPoint x="410" y="490" as="sourcePoint" />
             <mxPoint x="615" y="440" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cF_xTZ270S69VVXFKJcA-24" value="&lt;div align=&quot;center&quot;&gt;&amp;lt;&amp;lt;Aggregate&amp;gt;&amp;gt;&lt;br&gt;&amp;nbsp; User&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- Create a new user&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- Update user (Name, Email, PAN)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" parent="1" vertex="1">
-          <mxGeometry x="-589" y="190" width="241" height="240" as="geometry" />
+        <mxCell id="cF_xTZ270S69VVXFKJcA-24" value="&lt;div align=&quot;center&quot;&gt;&amp;lt;&amp;lt;Aggregate&amp;gt;&amp;gt;&lt;br&gt;&amp;nbsp; &lt;b&gt;User&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- Create a new user&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;- Update user (Name, Email, PAN)&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-540" y="230" width="200.83" height="200" as="geometry" />
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-25" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-470.5" y="490" as="sourcePoint" />
-            <mxPoint x="-470.5" y="433" as="targetPoint" />
+            <mxPoint x="-440.09" y="490" as="sourcePoint" />
+            <mxPoint x="-440.09" y="433" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-439.59" y="460" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-26" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-480" y="100" as="sourcePoint" />
-            <mxPoint x="-480" y="180" as="targetPoint" />
+            <mxPoint x="-440.09000000000003" y="150" as="sourcePoint" />
+            <mxPoint x="-440.09000000000003" y="230" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cF_xTZ270S69VVXFKJcA-27" value="/users" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="cF_xTZ270S69VVXFKJcA-26" vertex="1" connectable="0">
@@ -119,22 +122,22 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jL8-jDqaGCi4prjKTbXw-3" value="&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;- User Details&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Id, Name, Email, PAN&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;- Audit Log&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;- Track changes&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;- from&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;- to&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [Example - &lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;Email changed from XX to YY]&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="730" y="190" width="240" height="240" as="geometry" />
+        <mxCell id="jL8-jDqaGCi4prjKTbXw-3" value="&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;- User Details&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; - Id, Name, Email, PAN&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;- Audit Log&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt; - Track changes&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;- from&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;- to&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [Example - &lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;Email changed from XX to YY]&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="520" y="230" width="200" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="jL8-jDqaGCi4prjKTbXw-4" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1">
+        <mxCell id="jL8-jDqaGCi4prjKTbXw-4" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="850" y="490" as="sourcePoint" />
-            <mxPoint x="850" y="430" as="targetPoint" />
+            <mxPoint x="610" y="490" as="sourcePoint" />
+            <mxPoint x="610" y="430" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jL8-jDqaGCi4prjKTbXw-5" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="jL8-jDqaGCi4prjKTbXw-5" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="849" y="100" as="sourcePoint" />
-            <mxPoint x="849" y="180" as="targetPoint" />
+            <mxPoint x="610" y="150" as="sourcePoint" />
+            <mxPoint x="610" y="230" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jL8-jDqaGCi4prjKTbXw-6" value="/user-history" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jL8-jDqaGCi4prjKTbXw-5">
+        <mxCell id="jL8-jDqaGCi4prjKTbXw-6" value="/user-history" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jL8-jDqaGCi4prjKTbXw-5" vertex="1" connectable="0">
           <mxGeometry x="-0.525" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
