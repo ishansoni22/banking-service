@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "269bf2c5-8c68-4cc8-9c96-26c4df08b812",
+		"name": "banking-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "iam",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"email\": \"\",\n    \"pan\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8010/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newFirstName\": \"\",\n    \"newLastName\": \"\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8010/v1/users/{userId}/name",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"users",
+								"{userId}",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update pan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPan\": \"\"   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8010/v1/users/{userId}/pan",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"users",
+								"{userId}",
+								"pan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newEmail\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8010/v1/users/{userId}/email",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"users",
+								"{userId}",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8011/v1/user-history/{userId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8011",
+							"path": [
+								"v1",
+								"user-history",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

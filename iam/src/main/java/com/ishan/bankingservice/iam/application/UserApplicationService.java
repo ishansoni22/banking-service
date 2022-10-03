@@ -17,7 +17,8 @@ public class UserApplicationService {
   public UserId createUser(CreateUserCommand createUserCommand) {
     User user = new User();
     UserId userId = user.create(
-        createUserCommand.getFullName(),
+        createUserCommand.getFirstName(),
+        createUserCommand.getLastName(),
         createUserCommand.getEmail(),
         createUserCommand.getPan()
     );
@@ -32,7 +33,8 @@ public class UserApplicationService {
 
     UserResource userResource = new UserResource();
     userResource.setId(user.getUserId().getId());
-    userResource.setFullName(user.getFullName());
+    userResource.setFirstName(user.getFirstName());
+    userResource.setLastName(user.getLastName());
     userResource.setEmail(user.getEmail());
     userResource.setPan(user.getPan());
 
@@ -42,7 +44,7 @@ public class UserApplicationService {
   @Transactional
   public void updateName(UpdateNameCommand updateNameCommand) {
     User user = userRepository.get(new UserId(updateNameCommand.getUserId()));
-    user.updateFullName(updateNameCommand.getNewName());
+    user.updateFullName(updateNameCommand.getNewFirstName(), updateNameCommand.getNewLastName());
     userRepository.save(user);
   }
 

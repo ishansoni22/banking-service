@@ -7,11 +7,13 @@ import lombok.Getter;
 public class UpdateNameCommand {
 
   private String userId;
-  private String newName;
+  private String newFirstName;
+  private String newLastName;
 
-  public UpdateNameCommand(String userId, String newName) {
+  public UpdateNameCommand(String userId, String newFirstName, String newLastName) {
     this.userId = Objects.requireNonNull(userId);
-    this.newName = Objects.requireNonNull(newName);
+    this.newFirstName = Objects.requireNonNull(newFirstName);
+    this.newLastName = Objects.requireNonNull(newLastName);
   }
 
 }

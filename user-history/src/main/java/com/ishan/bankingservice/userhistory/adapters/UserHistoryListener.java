@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ishan.bankingservice.userhistory.domain.User;
 import com.ishan.bankingservice.userhistory.domain.DefaultUserEventHandler;
 import com.ishan.bankingservice.userhistory.domain.UserEventHandler;
+import com.ishan.bankingservice.userhistory.domain.UserEventHandlerV1;
 import com.ishan.bankingservice.userhistory.domain.UserRepository;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
@@ -39,10 +40,12 @@ public class UserHistoryListener {
 
     User user = userRepository.findById(id).orElse(new User());
 
-    UserEventHandler userCreatedHandler = new DefaultUserEventHandler();
-    userCreatedHandler.next(null);
+    UserEventHandler defaultUserEventHandler = new DefaultUserEventHandler();
 
-    userCreatedHandler.handle(eventType, eventVersion, userEvent, mapper, user);
+    UserEventHandler userEventHandlerV1 = new UserEventHandlerV1();
+    userEventHandlerV1.next(defaultUserEventHandler);
+
+    userEventHandlerV1.handle(eventType, eventVersion, userEvent, mapper, user);
 
     userRepository.save(user);
   }

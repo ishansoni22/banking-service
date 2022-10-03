@@ -13,7 +13,12 @@ public class User {
   @Id
   private String userId;
 
+  @Deprecated
   private String fullName;
+
+  private String firstName;
+
+  private String lastName;
 
   private String email;
 

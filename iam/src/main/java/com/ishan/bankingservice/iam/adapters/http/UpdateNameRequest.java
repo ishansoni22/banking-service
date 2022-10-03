@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 class UpdateNameRequest {
 
-  private String newName;
+  private String newFirstName;
+  private String newLastName;
 
 }

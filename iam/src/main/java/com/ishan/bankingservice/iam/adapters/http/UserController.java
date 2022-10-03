@@ -30,7 +30,8 @@ public class UserController {
   public ResponseEntity<String> createUser(@RequestBody CreateUserRequest createUserRequest) {
     UserId userId = userApplicationService.createUser(
         new CreateUserCommand(
-            createUserRequest.getFullName(),
+            createUserRequest.getFirstName(),
+            createUserRequest.getLastName(),
             createUserRequest.getEmail(),
             createUserRequest.getPan()
         )
@@ -53,7 +54,7 @@ public class UserController {
       @PathVariable("userId") String userId,
       @RequestBody UpdateNameRequest updateNameRequest) {
     userApplicationService.updateName(
-        new UpdateNameCommand(userId, updateNameRequest.getNewName())
+        new UpdateNameCommand(userId, updateNameRequest.getNewFirstName(), updateNameRequest.getNewLastName())
     );
     return ResponseEntity.ok().build();
   }

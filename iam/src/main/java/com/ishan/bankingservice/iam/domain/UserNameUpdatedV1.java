@@ -6,18 +6,16 @@ import lombok.Setter;
 
 @Getter
 @Setter(AccessLevel.PRIVATE)
-public class UserNameUpdated extends UserEvent {
+public class UserNameUpdatedV1 extends UserEvent {
 
-  private String newFirstName;
-  private String newLastName;
+  private String newFullName;
   private String eventType = "UserNameUpdated";
 
-  private UserNameUpdated() {}
+  private UserNameUpdatedV1() {}
 
-  public UserNameUpdated(UserId userId, int revision, String newFirstName, String newLastName) {
+  public UserNameUpdatedV1(UserId userId, int revision, String newFullName) {
     super(userId, revision);
-    this.newFirstName = newFirstName;
-    this.newLastName = newLastName;
+    this.newFullName = newFullName;
   }
 
   @Override
@@ -27,7 +25,7 @@ public class UserNameUpdated extends UserEvent {
 
   @Override
   public int getVersion() {
-    return 2;
+    return 1;
   }
 
 }
