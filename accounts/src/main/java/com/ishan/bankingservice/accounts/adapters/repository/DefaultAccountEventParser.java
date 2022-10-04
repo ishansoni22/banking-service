@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ishan.bankingservice.accounts.domain.AccountCreated;
 import com.ishan.bankingservice.accounts.domain.AccountEvent;
 import com.ishan.bankingservice.accounts.domain.MoneyDeposited;
+import com.ishan.bankingservice.accounts.domain.MoneyWithdrawn;
 
 public class DefaultAccountEventParser implements AccountEventParser {
 
@@ -22,6 +23,8 @@ public class DefaultAccountEventParser implements AccountEventParser {
         accountEvent = mapper.readValue(event, AccountCreated.class);
       } else if ("MoneyDeposited".equals(type)) {
         accountEvent = mapper.readValue(event, MoneyDeposited.class);
+      } else if ("MoneyWithdrawn".equals(type)) {
+        accountEvent = mapper.readValue(event, MoneyWithdrawn.class);
       }
     } catch (Exception e) {
       e.printStackTrace();

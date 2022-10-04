@@ -4,6 +4,7 @@ import com.ishan.bankingservice.accounts.application.AccountApplicationService;
 import com.ishan.bankingservice.accounts.application.AccountResource;
 import com.ishan.bankingservice.accounts.application.CreateAccountCommand;
 import com.ishan.bankingservice.accounts.application.MoneyDepositCommand;
+import com.ishan.bankingservice.accounts.application.MoneyTransferCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +33,26 @@ public class AccountController {
       @RequestBody MoneyDepositRequest moneyDepositRequest) {
     return ResponseEntity.ok(this.accountApplicationService.deposit(
         new MoneyDepositCommand(accountId, moneyDepositRequest.getAmount())));
+  }
+
+  @PostMapping("/{accountId}/withdraw")
+  public ResponseEntity<AccountResource> withdraw(@PathVariable("accountId") String accountId,
+      @RequestBody MoneyWithdrawRequest moneyWithdrawRequest) {
+    return ResponseEntity.ok(this.accountApplicationService.withdraw(
+        new MoneyWithdrawCommand(accountId, moneyWithdrawRequest.getAmount())));
+  }
+
+  @PostMapping("/{accountId}/transfer")
+  public ResponseEntity<AccountResource> transfer(@PathVariable("accountId") String accountId,
+    @RequestBody MoneyTransferRequest moneyTransferRequest) {
+  return ResponseEntity.ok(this.accountApplicationService.transfer(
+      new MoneyTransferCommand(
+          accountId,
+          moneyTransferRequest.getToAccountId(),
+          true,
+          moneyTransferRequest.getAmount(),
+          moneyTransferRequest.getReference()
+      )));
   }
 
   @GetMapping(value = "/{accountId}", produces = MediaType.APPLICATION_JSON_VALUE)

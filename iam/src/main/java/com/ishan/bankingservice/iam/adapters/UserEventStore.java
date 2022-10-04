@@ -65,19 +65,20 @@ class UserEventStore implements EventStore<UserEvent> {
     return fact;
   }
 
-  @Scheduled(cron = "* * * * * *")
+  @Scheduled(fixedDelay = 1000)
   public void publishPendingEvents() {
     List<Fact> pendingEvents
         = factRepository.findAllByStatusOrderByAggregateIdAscRevisionAsc(Status.PENDING);
-    for (Fact fact: pendingEvents) {
+    for (Fact event: pendingEvents) {
       try {
         ProducerRecord<String, String> record
-            = new ProducerRecord<>(fact.getAggregate(), fact.getAggregateId(), fact.getFact());
+            = new ProducerRecord<>(event.getAggregate(), event.getAggregateId(), event.getFact());
         producer.send(record);
-        fact.setStatus(Status.PROCESSED);
+        //todo - Register a callback instead!
+        event.setStatus(Status.PROCESSED);
       } catch (Exception e) {
-        log.error("Unable to publish user event {} to kafka", fact.getId(),  e);
-        fact.setStatus(Status.FAILURE);
+        log.error("Unable to publish user event {} to kafka", event.getId(),  e);
+        event.setStatus(Status.FAILURE);
       }
     }
     factRepository.saveAll(pendingEvents);

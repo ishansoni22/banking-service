@@ -27,10 +27,19 @@ public class Account {
     this.changes.add(new AccountCreated(this.accountId, this.revision, this.ownerId));
   }
 
-  public void deposit(BigDecimal amount) {
+  public void deposit(BigDecimal amount, String reference) {
     this.balance = this.balance.add(amount);
     ++this.revision;
-    this.changes.add(new MoneyDeposited(this.accountId, this.revision, amount));
+    this.changes.add(new MoneyDeposited(this.accountId, this.revision, amount, reference));
+  }
+
+  public void withdraw(BigDecimal amount, String reference) {
+    if (this.balance.compareTo(amount) < 0) {
+      throw new IllegalStateException("Cannot withdraw more than the current balance");
+    }
+    this.balance = this.balance.subtract(amount);
+    ++this.revision;
+    this.changes.add(new MoneyWithdrawn(this.accountId, this.revision, amount, reference));
   }
 
   void apply(AccountCreated accountCreated) {
@@ -43,6 +52,11 @@ public class Account {
   void apply(MoneyDeposited moneyDeposited) {
     this.balance = this.balance.add(moneyDeposited.getAmount());
     this.revision = moneyDeposited.getRevision();
+  }
+
+  public void apply(MoneyWithdrawn moneyWithdrawn) {
+    this.balance = this.balance.subtract(moneyWithdrawn.getAmount());
+    this.revision = moneyWithdrawn.getRevision();
   }
 
   public AccountId getAccountId() {

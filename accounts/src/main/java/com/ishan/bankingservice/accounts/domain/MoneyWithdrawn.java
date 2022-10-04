@@ -7,15 +7,15 @@ import lombok.Setter;
 
 @Getter
 @Setter(AccessLevel.PRIVATE)
-public class MoneyDeposited extends AccountEvent {
+public class MoneyWithdrawn extends AccountEvent {
 
   private BigDecimal amount;
   private String reference;
-  private String eventType = "MoneyDeposited";
+  private String eventType = "MoneyWithdrawn";
 
-  private MoneyDeposited() {}
+  private MoneyWithdrawn() {}
 
-  MoneyDeposited(AccountId accountId, int revision, BigDecimal amount, String reference) {
+  public MoneyWithdrawn(AccountId accountId, int revision, BigDecimal amount, String reference) {
     super(accountId, revision);
     this.amount = amount;
     this.reference = reference;

@@ -8,7 +8,10 @@ import com.ishan.bankingservice.common.AggregateId;
 import com.ishan.bankingservice.common.EventStore;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -16,6 +19,9 @@ public class AccountEventStore implements EventStore<AccountEvent> {
 
   @Autowired
   private FactRepository factRepository;
+
+  @Autowired
+  private KafkaProducer<String, String> kafkaProducer;
 
   @Autowired
   private ObjectMapper mapper;
@@ -57,8 +63,27 @@ public class AccountEventStore implements EventStore<AccountEvent> {
 
   private AccountEvent toEvent(Fact fact) {
     DefaultAccountEventParser defaultAccountEventParser = new DefaultAccountEventParser();
-
     return defaultAccountEventParser.parse(fact, this.mapper);
+  }
+
+  @Scheduled(fixedDelay = 1000)
+  public void publishPendingEvents() {
+    List<Fact> pendingEvents = this.factRepository
+        .getAllByStatusOrderByAggregateIdAscRevisionAsc(Status.PENDING);
+
+    for (Fact event: pendingEvents) {
+      try {
+        ProducerRecord<String, String> record
+            = new ProducerRecord<>(AccountEvent.TYPE, event.getAggregateId(), event.getFact());
+        this.kafkaProducer.send(record);
+        //todo - Register a callback instead!
+        event.setStatus(Status.PROCESSED);
+      } catch (Exception e) {
+        e.printStackTrace();
+        event.setStatus(Status.FAILURE);
+      }
+    }
+    this.factRepository.saveAll(pendingEvents);
   }
 
 }
