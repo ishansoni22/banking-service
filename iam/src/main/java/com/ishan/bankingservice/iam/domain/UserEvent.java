@@ -16,7 +16,7 @@ public abstract class UserEvent implements Event<User> {
   private int version = 1;
   private String eventType = UserEvent.TYPE;
 
-  UserEvent() {}
+  protected UserEvent() {}
 
   UserEvent(UserId aggregateId, int revision) {
     this.aggregateId = aggregateId;
